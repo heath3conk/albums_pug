@@ -10,7 +10,7 @@ block content
       th Genre
     tr
       for album in albums
-        td.album-title 
-          a(href="/albums/#{album._id}") #{album.album}
+        td
+          a.album-title(href="/albums/#{album._id}") #{album.album}
         td #{album.artist}
         td #{album.genre}

@@ -54,8 +54,6 @@ describe('There is a collection of albums', () => {
       })
       element.all(by.tagName('td')).then((data) => {
         expect(data[0].getText()).toContain('Kind of Blue')
-        // stretch class test
-        //expect(data[0].getAttribute('class').getText()).toEqual('album-title')
         expect(data[1].getText()).toContain('Miles Davis')
         expect(data[2].getText()).toContain('Jazz')
       })
@@ -63,8 +61,8 @@ describe('There is a collection of albums', () => {
       element.all(by.tagName('a')).then((links) => {
         expect(links[1].getAttribute('href').getText()).toEqual('Kind of Blue')
         expect(links[1].getAttribute('href')).toContain('/albums/' + albumId)
+        // expect(links[1].getAttribute('class').getText()).toEqual('album-title')
       })
-      element.all(by.css(''))
     })
   })
 })
