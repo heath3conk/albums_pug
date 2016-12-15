@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1 Albums
+  a(href="/albums/new") New Album
+  table
+    tr
+      th Album
+      th Artist
+      th Genre
+    tr
+      for album in albums
+        td.album-title 
+          a(href="/albums/#{album._id}") #{album.album}
+        td #{album.artist}
+        td #{album.genre}

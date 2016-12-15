@@ -1,0 +1,30 @@
+{
+  "name": "albums_pug",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": { 
+    "start": "node ./bin/www", 
+    "tdd": "nodemon --watch ./ --exec 'mocha test/unit' --delay 1 ./bin/www", 
+    "test": "npm run test:wmu && npm run test:unit && npm run test:integration && npm run test:acceptance", 
+    "test:acceptance": "NODE_ENV=test protractor test/acceptance/config.js", 
+    "test:integration": "NODE_ENV=test mocha test/integration --recursive", 
+    "test:unit": "NODE_ENV=test mocha test/unit/ --recursive", 
+    "test:wmu": "webdriver-manager update" 
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jasmine": "^2.5.2",
+    "mocha": "^3.2.0",
+    "protractor": "^4.0.13",
+    "sinon": "^1.17.6"
+  }
+}
