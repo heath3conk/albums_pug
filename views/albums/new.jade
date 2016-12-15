@@ -2,28 +2,31 @@ extends ../layout
 
 block content
 
-  form(name='new-album' method='POST' action='/albums')
-    p
-    label(for='artist') Artist
-    input(type='text' name='artist')
-    p
-      label(for='album') Album
-      input(type='text' name='album')
-    p
-      select(name='genre')
-        option(value='Jazz') Jazz
-        option(value='Rock') Rock
-        option(value='Folk') Folk
-    p
-      label(for='stars') Rating
-      input(type='radio' name='stars' value='1' id='stars')
-      input(type='radio' name='stars' value='2' id='stars')
-      input(type='radio' name='stars' value='3' id='stars')
-      input(type='radio' name='stars' value='4' id='stars')
-      input(type='radio' name='stars' value='5' id='stars')
-    p
-      label(for='explicit') Contains Explicit Lyrics
-      input(type='checkbox' name='explicit' value='1')
-    p
-      input(type='submit' value='Create Album')
+  div.box
+    h1 Create Album
+    form(name='new-album' method='POST' action='/albums')
+      p
+      label(for='artist') Artist
+      input(type='text' name='artist')
+      p
+        label(for='album') Album
+        input(type='text' name='album')
+      p
+        select(name='genre')
+          option(value='Jazz') Jazz
+          option(value='Rock') Rock
+          option(value='Folk') Folk
+      p
+        label(for='stars') Rating
+        input(type='radio' name='stars' value='1' id='stars')
+        input(type='radio' name='stars' value='2' id='stars')
+        input(type='radio' name='stars' value='3' id='stars')
+        input(type='radio' name='stars' value='4' id='stars')
+        input(type='radio' name='stars' value='5' id='stars')
+      p
+        label(for='explicit') Contains Explicit Lyrics
+        input(type='checkbox' name='explicit' value='1')
+      p
+        input(type='submit' value='Create Album')
+    a(href='/albums') Cancel
   

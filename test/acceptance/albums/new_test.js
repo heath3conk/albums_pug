@@ -21,6 +21,16 @@ describe('Express CRUD', () => {
     done()
   })
 
+  describe('Given the beautification of the new album page', () =>{
+    it('has a header, a cancel button and an outline', () => {
+      browser.get('/albums/new')
+      expect(element(by.tagName('h1')).getText()).toEqual('Create Album')
+      expect(element(by.tagName('a')).getAttribute('href')).toContain('/albums')
+      expect(element(by.tagName('a')).getText()).toEqual('Cancel')
+      // expect(element(by.css('div.box'))).to.exist
+    })
+  })
+
   describe('Given I visit the new album page', () => {
     it('Then I see blank album, artist, genre, stars, explicit lyrics fields, and "Create Album" link', () => {
       browser.get('/albums/new')
@@ -32,13 +42,6 @@ describe('Express CRUD', () => {
       element(by.css('input[type=submit]')).submit()
 
       expect(browser.getCurrentUrl()).toMatch(urlRegex)
-      // element.all(by.tagName('label')).then((labels) => {
-      //   expect(labels[0].getText()).toContain('Artist')
-      //   expect(labels[1].getText()).toContain('Album')
-      //   expect(labels[2].getText()).toContain('Genre')
-      //   expect(labels[3].getText()).toContain('Stars')
-      //   expect(labels[4].getText()).toContain('Contains Explicit Lyrics')
-      // })
     })
   })
 })
