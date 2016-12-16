@@ -27,7 +27,7 @@ describe('Express CRUD', () => {
       expect(element(by.tagName('h1')).getText()).toEqual('Create Album')
       expect(element(by.tagName('a')).getAttribute('href')).toContain('/albums')
       expect(element(by.tagName('a')).getText()).toEqual('Cancel')
-      // expect(element(by.css('div.box'))).to.exist
+      expect(element(by.css('div')).getAttribute('class')).toContain('box')
     })
   })
 

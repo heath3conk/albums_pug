@@ -26,7 +26,7 @@ describe('Express CRUD', () => {
 })
 
 describe('There is a collection of albums', () => {
-  let albumId
+  let listAlbumId
 
   beforeEach((done) => {
     albumsCollection.insert({
@@ -34,7 +34,7 @@ describe('There is a collection of albums', () => {
       artist: "Miles Davis",
       genre: "Jazz"
     }, (err, newAlbum) => {
-      albumId = newAlbum._id
+      listAlbumId = newAlbum._id
       done(err)
     })
   })
@@ -60,7 +60,7 @@ describe('There is a collection of albums', () => {
 
       element.all(by.tagName('a')).then((links) => {
         expect(links[1].getAttribute('href').getText()).toEqual('Kind of Blue')
-        expect(links[1].getAttribute('href')).toContain('/albums/' + albumId)
+        expect(links[1].getAttribute('href')).toContain('/albums/' + listAlbumId)
         // expect(links[1].getAttribute('class').getText()).toEqual('album-title')
       })
     })

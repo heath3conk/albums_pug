@@ -8,8 +8,8 @@ block content
       th Album
       th Artist
       th Genre
-    tr
-      for album in albums
+    for album in albums
+      tr
         td
           a.album-title(href="/albums/#{album._id}") #{album.album}
         td #{album.artist}
